@@ -59,3 +59,6 @@ gem 'bcrypt'
 #Adds support for Facebook login
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+#Allows .env file to exist
+gem 'dotenv-rails'
