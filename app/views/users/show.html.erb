@@ -1,10 +1,15 @@
 <h2><%=@user.username%></h2>
-<h3>Your Orders:</h3>
-<%if @user.orders != []%>
-    <%@user.orders.each do |order|%>
-        <h4><%= order.item_name%>: </h4>
-        <p>Amount: <%order.amount%></p>
-    <%end%>
+<%if @admin%>
+    <h3>Welcome back, Admin!</h3>
+    <link_to "Manage Admin Permissions", "/users">
 <%else%>
-    <p>You haven't placed any orders yet!</p>
+    <h3>Your Orders:</h3>
+    <%if @user.orders != []%>
+        <%@user.orders.each do |order|%>
+            <h4><%= order.item_name%>: </h4>
+            <p>Amount: <%order.amount%></p>
+        <%end%>
+    <%else%>
+        <p>You haven't placed any orders yet!</p>
+    <%end%>
 <%end%>
