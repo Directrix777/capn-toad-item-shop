@@ -12,6 +12,13 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     end
+
+    def create_fb
+      if User.find_by(username: auth['info']['name']
+        @user = User.find_by(username: auth['info']['name'])
+      else
+        @user = User.new(username: auth['info']['name'], password: User.randomly_generate)
+
   
     def destroy
       session.delete :user_id
