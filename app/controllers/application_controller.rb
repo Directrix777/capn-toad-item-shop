@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+    include ActionView::Helpers::TextHelper
     helper_method :current_user
+    helper_method :pluralize
     before_action :set_admin
 
     def current_user
