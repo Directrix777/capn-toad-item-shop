@@ -14,6 +14,11 @@
     <%= link_to "Log In", "/login"%> <%= button_to "Sign Up", "/signup"%>
   <%else%>
     <%= button_to "Log Out", "/logout"%>
+    <%if @admin%>
+      <%= link_to "Back To Task Hub", user_path(current_user)%>
+    <%else%>
+      <%= link_to "Your Profile", user_path(current_user)%>
+    <%end%>
   <%end%>
   <h1>Captain Toad's Item Shop</h1>
   <h3>"Got some pretty neat stuff I can't use!"</h3>
