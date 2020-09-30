@@ -27,7 +27,11 @@ class OrdersController < ApplicationController
         admin_only
         @order = Order.find(params[:id])
         @order.delete
-        redirect_to item_orders_path
+        if params[:item_id]
+            redirect_to item_orders_path
+        else
+            redirect_to orders_path
+        end
     end
 
     private
