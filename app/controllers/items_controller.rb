@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         admin_only
         @item = @item = Item.find(params[:id])
         @item.delete
