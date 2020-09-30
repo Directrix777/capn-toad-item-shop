@@ -1,6 +1,5 @@
 <% @items.each do |item|%>
-    <hr>
     <h2><%= item.name %></h2>
     <p><%= link_to "View Item", item_path(item)%></p>
+    <hr>
 <%end%>
-<hr>
