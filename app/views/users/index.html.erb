@@ -1,0 +1,5 @@
+<% @users.each do |user|%>
+    <%if user != current_user%>
+        <p><%= link_to "#{user.username}", "/toggle/#{user.id}" %></p>
+    <%end%>
+<%end%>
