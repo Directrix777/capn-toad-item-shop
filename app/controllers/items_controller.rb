@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
         admin_only
         @item = Item.new(item_params)
         if @item.save
-            redirect_to item_path(item)
+            redirect_to item_path(@item)
         else
             render 'new'
         end
