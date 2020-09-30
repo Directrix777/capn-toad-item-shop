@@ -11,6 +11,8 @@ class Item < ApplicationRecord
     def item_not_on_market
         if Item.find_by(name: self.name)
             errors.add(:you, "are already selling that item!")
+            #Message is added at the key `:you` solely to create full message: 
+            #"You are already selling that item!"
         end
     end
 end
