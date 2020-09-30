@@ -9,8 +9,8 @@ class Item < ApplicationRecord
     private
 
     def item_not_on_market
-        if self == Item.find_by(name: self.name)
-            errors.add(:item_not_on_market, "You're already selling that item!")
+        if Item.find_by(name: self.name)
+            errors.add(:you, "are already selling that item!")
         end
     end
 end
