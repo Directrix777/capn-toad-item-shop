@@ -3,3 +3,6 @@
     <p><%= link_to "View Item", item_path(item)%></p>
     <hr>
 <%end%>
+<%if @admin%>
+    <%= link_to "Create New Item", new_item_path%>
+<%end%>
