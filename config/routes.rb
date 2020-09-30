@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :items do
-    resources :orders, only: [:new, :create, :index :delete]
+    resources :orders, only: [:new, :create, :index, :delete]
   end
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#new'
