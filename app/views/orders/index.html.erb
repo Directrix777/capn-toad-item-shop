@@ -1,0 +1,6 @@
+<% @orders.each do |order|%>
+    <h2><%= order.user.username%></h2>
+    <p><%= pluralize(order.amount, order.item_name)%></p>
+    <p>Total: <%=pluralize(order.total, "coin")%></p>
+    <%= button_to "Ship Product", order_path(order), method: :delete%>
+<%end%>
