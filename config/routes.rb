@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :orders, only: [:index, :delete]
+  resources :orders, only: [:show, :index, :destroy]
   resources :users
   resources :items
   resources :items do
-    resources :orders, only: [:new, :create, :index, :delete]
+    resources :orders, only: [:new, :create, :show, :index, :destroy]
   end
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#new'
