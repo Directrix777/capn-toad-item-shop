@@ -1,7 +1,8 @@
 <h2><%=@user.username%></h2>
 <%if @admin%>
     <h3>Welcome back, Admin!</h3>
-    <%= link_to "Manage Admin Permissions", "/users"%>
+    <%= link_to "Manage Admin Permissions", users_path%><br>
+    <%= link_to "Fill Orders", orders_path%>
 <%else%>
 <hr>
     <h3>Your Pending Orders:</h3>
