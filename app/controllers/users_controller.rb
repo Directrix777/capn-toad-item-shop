@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    before_action :set_admin
 
     def new
         @user = User.new
@@ -20,28 +19,28 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find(params[:id])
-        if @user != current_user
-            redirect_to '/'
-        end
+        @user = current_user
     end
 
     def index
-        if !@admin
-            redirect_to '/'
-        end
+        admin_only
         @users = User.all
     end
 
     def show_toggle
-        
+        admin_only
+        @user = User.find(params[:id])
     end
+
+    def toggle
+        admin_only
+        @user = User.find(params[:id])
+        @user.update(admin: !@user.admin)
+        redirect_to "/toggle/#{params[:id]}"
+    end
+
 
     private
-
-    def set_admin
-        @admin = current_user.admin
-    end
 
     def user_params
         params.require(:user).permit(:username, :password, :password_confirmation)
