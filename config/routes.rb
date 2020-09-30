@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :orders
+  resources :orders, only: [:index, :delete]
   resources :users
   resources :items
+  resources :items do
+    resources :orders, only: [:new, :create, :index :delete]
+  end
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#new'
   get '/toggle/:id', to: 'users#show_toggle'
