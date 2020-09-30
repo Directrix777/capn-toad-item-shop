@@ -1,0 +1,8 @@
+<h2><%= @item.name%></h2>
+<p>Amount in stock: <%=@item.amount_in_stock%></p>
+<p>Price: <%=pluralize(@item.price, "coin")%></p>
+<%if @admin%>
+    <%= link_to "Edit Item", edit_item_path(@item)%>
+    <%= button_to "Remove Item", item_path(@item), method: :delete%>
+<%else%>
+<%end%>
