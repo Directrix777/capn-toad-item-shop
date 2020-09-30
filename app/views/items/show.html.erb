@@ -4,5 +4,7 @@
 <%if @admin%>
     <%= link_to "Edit Item", edit_item_path(@item)%>
     <%= button_to "Remove Item", item_path(@item), method: :delete%>
+    <%=link_to "Fill Orders for this Item", item_orders_path(@item)%>
 <%else%>
+    <%= link_to "Place Order", new_item_order_path(@item)%>
 <%end%>
