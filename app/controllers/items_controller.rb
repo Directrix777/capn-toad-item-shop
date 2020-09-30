@@ -37,6 +37,13 @@ class ItemsController < ApplicationController
         end
     end
 
+    def delete
+        admin_only
+        @item = @item = Item.find(params[:id])
+        @item.delete
+        redirect_to items_path
+    end
+
     private
 
     def item_params
