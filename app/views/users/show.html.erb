@@ -3,11 +3,13 @@
     <h3>Welcome back, Admin!</h3>
     <%= link_to "Manage Admin Permissions", "/users"%>
 <%else%>
-    <h3>Your Orders:</h3>
+<hr>
+    <h3>Your Pending Orders:</h3>
+    <hr>
     <%if @user.orders != []%>
         <%@user.orders.each do |order|%>
-            <h4><%= order.item_name%>: </h4>
-            <p>Amount: <%order.amount%></p>
+            <h4><%= order.item_name%> </h4>
+            <p>Amount: <%=order.amount%></p>
         <%end%>
     <%else%>
         <p>You haven't placed any orders yet!</p>
