@@ -1,6 +1,6 @@
 <% @items.each do |item|%>
     <h2><%= item.name %></h2>
-    <p><%= pluralize(@item.price, "coin")%></p>
+    <p><%= pluralize(item.price, "coin")%></p>
     <p><%= link_to "View Item", item_path(item)%></p>
     <hr>
 <%end%>
