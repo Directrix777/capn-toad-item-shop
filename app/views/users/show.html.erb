@@ -1,7 +1,7 @@
 <h2><%=@user.username%></h2>
 <%if @admin%>
     <h3>Welcome back, Admin!</h3>
-    <link_to "Manage Admin Permissions", "/users">
+    <%= link_to "Manage Admin Permissions", "/users"%>
 <%else%>
     <h3>Your Orders:</h3>
     <%if @user.orders != []%>
