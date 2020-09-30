@@ -25,9 +25,9 @@ class OrdersController < ApplicationController
 
     def destroy
         admin_only
-        @item = Item.find(params[:id])
-        @item.delete
-        redirect_to items_path
+        @order = Order.find(params[:id])
+        @order.delete
+        redirect_to item_orders_path
     end
 
     private
